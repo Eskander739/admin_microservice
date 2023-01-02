@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="/css/blog_management.css">
+    <script src="/js/edit_post.js"></script>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-custom navbar-mainbg">
+        <button class="navbar-toggler" type="button" aria-controls="navbarSupportedContent" aria-expanded="false"
+            aria-label="Toggle navigation">
+            <i class="fas fa-bars text-white"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ml-auto">
+                <div class="hori-selector">
+                    <div class="left"></div>
+                    <div class="right"></div>
+                </div>
+                <li class="nav-item">
+                    <a class="nav-link" href="http://localhost:8050/admin"><i class="fas fa-tachometer-alt"></i>Главное
+                        меню</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="http://localhost:8050/admin/new-post-page"><i class="far fa-address-book"></i>Добавить пост</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="http://localhost:8050/admin/posts"><i
+                            class="far fa-calendar-alt"></i>Посты</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="javascript:void(0);"><i class="far fa-chart-bar"></i>Настройки</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container_redactor">
+        <div class="row">
+            <div class="col-md-4 col-md-offset-1">
+                <div class="panel_redactor panel-default">
+                    <!-- <script>
+                        function sendJSON() {
+                            let title = document.querySelector('input[name="title"]');
+                            let content = document.querySelector('textarea[name="content"]');
+
+                            let result = document.querySelector('.result');
+                            let xhr = new XMLHttpRequest();
+                            let url = "http://localhost:8050/admin/add_post_data";
+                            xhr.open("POST", url, true);
+                            xhr.setRequestHeader("Content-Type", "application/json");
+                            xhr.onreadystatechange = function () {
+                                if (xhr.readyState === 4 && xhr.status === 200) {
+                                    result.innerHTML = this.responseText;
+                                }
+                            };
+                            var data = JSON.stringify({ "title": title.value, "content": content.value });
+                            var titleText = document.getElementById("titleText");
+                            var contentText = document.getElementById("control_content");
+                            if (titleText.value != "") {
+                                if (contentText.value != "") {
+                                    titleText.value = "";
+                                    contentText.value = "";
+                                    xhr.send(data);
+
+                                }
+                            }
+
+
+                        }
+                    </script> -->
+                    <div class="add_post panel-heading">Edit Post</div>
+
+
+                    <div class="form-group">
+                        <div class="col-md-12">
+                            <textarea type="text" class="form-control" id="titleText" name="title" placeholder="Title"
+                                style="resize: none;">{{.TitleForAdd}}</textarea>
+
+                        </div>
+                        <div class="panel_redactor-body">
+                            <div class="buttons">
+                                <button type="" class="default-button" id="button-b"
+                                    onclick="set_input_bold_typing()"><strong>Ж</strong></button>
+                                <button type="" class="default-button k_button">К</button>
+                                <button type="" class="default-button ch_button">Ч</button>
+                                <button type="" class="default-button abc_button">АBC</button>
+                                <button type="" class="">Скопировать</button>
+                                <button type="" class="">Вставить</button>
+                            </div>
+                        </div>
+                        <form class="form-horizontal" role="form" method="POST"></form>
+                        <div class="form-group">
+                            <div class="col-md-12">
+                                <textarea name="content" id="control_content" class="form-control_content" cols="30"
+                                    rows="10" placeholder="Content">{{.ContentForAdd}}</textarea>
+
+                            </div>
+                            <label class="idForAdd" style="display: none;">{{.IdForAdd}}</label>
+                        </div>
+                        <div class="btn_data">
+                            <script>
+                                    function sendJSON() {
+                                        let title = document.querySelector('textarea[name="title"]');
+                                        let content = document.querySelector('textarea[name="content"]');
+                                        let idd = document.querySelector('label[class="idForAdd"]');
+
+                                        let result = document.querySelector('.result');
+                                        let xhr = new XMLHttpRequest();
+                                        let url = "http://localhost:8050/admin/modified-post";
+                                        xhr.open("POST", url, true);
+                                        xhr.setRequestHeader("Content-Type", "application/json");
+                                        xhr.onreadystatechange = function () {
+                                            if (xhr.readyState === 4 && xhr.status === 200) {
+                                                result.innerHTML = this.responseText;
+                                            }
+                                        };
+                                        var data = JSON.stringify({ "title": title.value, "content": content.value, "id": idd.textContent});
+                                        var titleText = document.getElementById("titleText");
+                                        var contentText = document.getElementById("control_content");
+                                        if (titleText.value != "") {
+                                            if (contentText.value != "") {
+                                                titleText.value = "";
+                                                contentText.value = "";
+                                                xhr.send(data);
+                                                window.location.replace("http://localhost:8050/admin/posts");
+
+                                            }
+                                        }
+
+
+                                    }</script>
+                            <button type="submit" class="btn btn-primary btn-block" onclick="sendJSON()">
+                                <i class="fa fa-btn fa-user"></i> Save changes
+                            </button>
+                            <button type="submit" class="btn btn-primary btn-block">
+                                <a class="nav-link" href="http://localhost:8050/admin/posts">Cancel</a>
+                            </button>
+
+                        </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</body>
+
+</html>

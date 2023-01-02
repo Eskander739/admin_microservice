@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- <link rel="stylesheet" href="css/blog_management.css"> -->
+    <link rel="stylesheet" href="/css/all_posts.css">
+    <script src="/js/all_posts.js"></script>
+    <script src="/js/all_posts_js_2.js"></script>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body onLoad="addPost();">
+<nav class="navbar navbar-expand-custom navbar-mainbg">
+    <button class="navbar-toggler" type="button" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <i class="fas fa-bars text-white"></i>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ml-auto">
+            <div class="hori-selector"><div class="left"></div><div class="right"></div></div>
+            <li class="nav-item">
+                <a class="nav-link" href="http://localhost:8050/admin"><i class="fas fa-tachometer-alt"></i>Главное меню</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="http://localhost:8050/admin/new-post-page"><i class="far fa-address-book"></i>Добавить пост</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="javascript:void(0);"><i class="far fa-calendar-alt"></i>Посты</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="javascript:void(0);"><i class="far fa-chart-bar"></i>Настройки</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+<!-- <div class="menu">
+    <div class="menu--wrapper"> -->
+
+<div class="menu">
+    <div class="menu--wrapper" id="main_div">
+        <button onclick="addPost()"  style="display: none;"></button>
+    
+        <!-- <div class="post-type">
+            <label class="title"><h1>Тестовый пост</h1></label>
+            <label>Какая-то информация</label>
+            <button class="edit-post">Редактировать</button>
+            <button class="remove-post">Удалить</button>
+        </div> -->
+    
+    </div>
+</div>
+
+</body>
+</html>
