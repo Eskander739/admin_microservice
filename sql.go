@@ -62,7 +62,7 @@ func dsn() string {
 }
 
 func dbConnection() (*sql.DB, error) {
-	var dbFirstName = fmt.Sprintf("%s:%s@tcp(%s)/", username, password, hostname)
+	var dbFirstName = "root:root@tcp(docker.for.mac.localhost:3307)/"
 	db, err := sql.Open("mysql", dbFirstName)
 	if err != nil {
 		log.Printf("Error %s when opening DB\n", err)
@@ -84,7 +84,7 @@ func dbConnection() (*sql.DB, error) {
 	log.Printf("rows affected %d\n", no)
 
 	db.Close()
-	db, err = sql.Open("mysql", dsn())
+	db, err = sql.Open("mysql", "root:root@tcp(docker.for.mac.localhost:3307)/eska")
 	if err != nil {
 		log.Printf("Error %s when opening DB", err)
 		return nil, err
