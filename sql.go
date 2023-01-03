@@ -37,7 +37,7 @@ type Db struct {
 const (
 	username = "root"
 	password = "root"
-	hostname = "localhost:3306"
+	hostname = "localhost:3307"
 	dbname   = "eska"
 )
 
